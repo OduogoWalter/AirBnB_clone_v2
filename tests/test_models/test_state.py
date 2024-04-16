@@ -1,19 +1,21 @@
 #!/usr/bin/python3
-""" """
-from tests.test_models.test_base_model import test_basemodel
+"""Unit tests for State model"""
+
+import unittest
 from models.state import State
 
 
-class test_state(test_basemodel):
-    """ """
+class TestState(unittest.TestCase):
+    """Test cases for State model"""
 
-    def __init__(self, *args, **kwargs):
-        """ """
-        super().__init__(*args, **kwargs)
-        self.name = "State"
-        self.value = State
+    def setUp(self):
+        """Set up test environment"""
+        self.state = State()
 
-    def test_name3(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.name), str)
+    def test_name_type(self):
+        """Test type of name attribute"""
+        self.assertIsInstance(self.state.name, str)
+
+
+if __name__ == "__main__":
+    unittest.main()

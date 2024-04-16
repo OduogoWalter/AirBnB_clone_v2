@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-""" """
-from tests.test_models.test_base_model import test_basemodel
+"""Unit tests for Review model"""
+
+import unittest
 from models.review import Review
 
 
-class test_review(test_basemodel):
-    """ """
+class TestReview(unittest.TestCase):
+    """Test cases for Review model"""
 
-    def __init__(self, *args, **kwargs):
-        """ """
-        super().__init__(*args, **kwargs)
-        self.name = "Review"
-        self.value = Review
+    def setUp(self):
+        """Set up test environment"""
+        self.review = Review()
 
-    def test_place_id(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.place_id), str)
+    def test_place_id_type(self):
+        """Test type of place_id attribute"""
+        self.assertIsInstance(self.review.place_id, str)
 
-    def test_user_id(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.user_id), str)
+    def test_user_id_type(self):
+        """Test type of user_id attribute"""
+        self.assertIsInstance(self.review.user_id, str)
 
-    def test_text(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.text), str)
+    def test_text_type(self):
+        """Test type of text attribute"""
+        self.assertIsInstance(self.review.text, str)
+
+
+if __name__ == "__main__":
+    unittest.main()
