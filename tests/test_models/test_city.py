@@ -19,7 +19,3 @@ class TestCity(unittest.TestCase):
     def test_name_type(self):
         """Test type of name attribute"""
         self.assertIsInstance(self.city.name, str)
-
-
-if __name__ == "__main__":
-    unittest.main()

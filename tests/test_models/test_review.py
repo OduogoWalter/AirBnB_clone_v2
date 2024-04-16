@@ -23,7 +23,3 @@ class TestReview(unittest.TestCase):
     def test_text_type(self):
         """Test type of text attribute"""
         self.assertIsInstance(self.review.text, str)
-
-
-if __name__ == "__main__":
-    unittest.main()

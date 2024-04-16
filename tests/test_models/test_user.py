@@ -27,7 +27,3 @@ class TestUser(unittest.TestCase):
     def test_password_type(self):
         """Test type of password attribute"""
         self.assertIsInstance(self.user.password, str)
-
-
-if __name__ == "__main__":
-    unittest.main()

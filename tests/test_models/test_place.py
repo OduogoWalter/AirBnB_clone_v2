@@ -55,7 +55,3 @@ class TestPlace(unittest.TestCase):
     def test_amenity_ids_type(self):
         """Test type of amenity_ids attribute"""
         self.assertIsInstance(self.place.amenity_ids, list)
-
-
-if __name__ == "__main__":
-    unittest.main()

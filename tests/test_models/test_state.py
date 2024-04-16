@@ -15,7 +15,3 @@ class TestState(unittest.TestCase):
     def test_name_type(self):
         """Test type of name attribute"""
         self.assertIsInstance(self.state.name, str)
-
-
-if __name__ == "__main__":
-    unittest.main()
