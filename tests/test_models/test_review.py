@@ -1,25 +1,36 @@
 #!/usr/bin/python3
-"""Unit tests for Review model"""
-
-import unittest
+""" """
+from tests.test_models.test_base_model import test_basemodel
 from models.review import Review
+import os
 
 
-class TestReview(unittest.TestCase):
-    """Test cases for Review model"""
+class test_review(test_basemodel):
+    """ review test class"""
 
-    def setUp(self):
-        """Set up test environment"""
-        self.review = Review()
+    def __init__(self, *args, **kwargs):
+        """ review class init"""
+        super().__init__(*args, **kwargs)
+        self.name = "Review"
+        self.value = Review
 
-    def test_place_id_type(self):
-        """Test type of place_id attribute"""
-        self.assertIsInstance(self.review.place_id, str)
+    def test_place_id(self):
+        """ testing review place_id attr"""
+        new = self.value()
+        self.assertEqual(type(new.place_id), str if
+                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
+                         type(None))
 
-    def test_user_id_type(self):
-        """Test type of user_id attribute"""
-        self.assertIsInstance(self.review.user_id, str)
+    def test_user_id(self):
+        """ testing review user_id attr"""
+        new = self.value()
+        self.assertEqual(type(new.user_id), str if
+                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
+                         type(None))
 
-    def test_text_type(self):
-        """Test type of text attribute"""
-        self.assertIsInstance(self.review.text, str)
+    def test_text(self):
+        """ testing review text attr"""
+        new = self.value()
+        self.assertEqual(type(new.text), str if
+                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
+                         type(None))
